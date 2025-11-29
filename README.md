@@ -14,3 +14,21 @@
 * [zvrva](https://github.com/zvrva) - ML Engineer
 * [h4cktivist](https://github.com/h4cktivist) - Backend Developer
 * [selivanova-a](https://github.com/selivanova-a) - Frontend Developer
+
+## Запуск
+
+### Требования
+* Docker
+* Docker Compose
+
+### Инструкция
+1. Клонируйте репозиторий.
+2. Запустите приложение:
+   ```bash
+   docker-compose up --build
+   ```
+3. Примените миграции базы данных:
+   ```bash
+   docker-compose exec backend alembic upgrade head
+   ```
+4. API будет доступно по адресу: [http://localhost:8000/docs](http://localhost:8000/docs)
