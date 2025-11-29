@@ -5,8 +5,6 @@ const ALL_CLIENTS = 'api/v1/clients';
 const UPLOAD_CSV = 'api/v1/clients/predict/upload_csv';
 export const PREDICT_id_URL = `http://localhost:8000/api/v1/clients/predict?client_id=`
 
-//export const getAllClients = axios({url: `${FIRST_API_URL}${ALL_CLIENTS}`, method: 'GET', params: {}});
-
 export const getAllClients = async() => {
     try {
         const res = await axios({url: `${FIRST_API_URL}${ALL_CLIENTS}`, method: 'GET', params: {}});

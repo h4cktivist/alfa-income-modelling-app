@@ -12,6 +12,7 @@ function AllClients() {
     interface Client {
         id: number;
         gender: string;
+        adminarea: string;
     }
 
     interface ServerResponse {
@@ -41,8 +42,6 @@ function AllClients() {
         }
     };
 
-
-    // @ts-ignore
     return (
         <div className='clients'>
             {clients.length === 0 ? (
@@ -54,7 +53,7 @@ function AllClients() {
                             key={client.id || index}
                             onClick={() => handleClick(client.id)}
                         >
-                            <p>ID клиента: {client.id};    Пол: {client.gender};   </p>
+                            <p>ID клиента: {client.id};    Пол: {client.gender};  Область:  {client.adminarea};</p>
                         </div>
                     ))}
                 </div>

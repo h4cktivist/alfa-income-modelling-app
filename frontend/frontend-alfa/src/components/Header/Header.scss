@@ -20,12 +20,22 @@
   }
 
   &_links {
+    text-decoration: none;
     color: const.$light-text-color;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    a {
+      color: const.$light-text-color;
+      text-decoration: none;
+    }
     &__item {
       margin-right: 16px;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
@@ -47,6 +57,11 @@
   border: none;
   background-color: rgba(222, 222, 238, .13);
   color: #FFFFFF;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(222, 222, 238, 0.16);
+  }
 }
 
 .main-button {
@@ -57,7 +72,11 @@
   transition: background .2s ease, border .2s ease, color .2s ease;
   border-radius: 8px;
   border: none;
-  background-color: const.$primary-color;
+  background-color: #ef3124;;
   color: #FFFFFF;
+  &:hover {
+    cursor: pointer;
+    background-color: const.$primary-color;
+  }
 }
 
