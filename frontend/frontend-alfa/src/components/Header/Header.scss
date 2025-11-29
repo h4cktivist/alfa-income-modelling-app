@@ -1,0 +1,63 @@
+@use "../../assets/styles/mixins" as mix;
+@use "../../assets/styles/constants.scss" as const;
+
+.header {
+  background-color: const.$background-color;
+  font-family: const.$font-family;
+
+  &_wrapper {
+    padding: 32px;
+    width: const.$content-width;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_icon {
+    color: const.$primary-color;
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  &_links {
+    color: const.$light-text-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__item {
+      margin-right: 16px;
+    }
+  }
+
+  &_buttons {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.light-button {
+  margin: 9px;
+  font-size: 14px;
+  min-height: 40px;
+  min-width: 88px;
+  padding: 0 19px;
+  transition: background .2s ease, border .2s ease, color .2s ease;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(222, 222, 238, .13);
+  color: #FFFFFF;
+}
+
+.main-button {
+  font-size: 14px;
+  min-height: 40px;
+  min-width: 88px;
+  padding: 0 19px;
+  transition: background .2s ease, border .2s ease, color .2s ease;
+  border-radius: 8px;
+  border: none;
+  background-color: const.$primary-color;
+  color: #FFFFFF;
+}
+

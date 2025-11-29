@@ -1,0 +1,35 @@
+@use "../../assets/styles/mixins" as mix;
+@use "../../assets/styles/constants.scss" as const;
+
+.menu {
+  background-color: const.$background-color;
+  font-family: const.$font-family;
+}
+
+.menu-wrapper {
+  padding-bottom: 32px;
+}
+
+.hello {
+  margin: 0 auto;
+  color: const.$light-text-color;
+  width: 1140px;
+  height: 376px;
+  padding: 32px;
+  background-color: rgba(214, 214, 229, 0.07);
+  background-image: url(https://alfabank.servicecdn.ru/site-upload/15/d8/11500/D04_CardPromoR-apr2025_dark.png);
+  background-position: center bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 32px;
+
+  &_title {
+    font-size: 48px;
+    font-weight: bold;
+  }
+
+  &_description {
+    font-size: 18px;
+    padding-top: 32px;
+  }
+}
