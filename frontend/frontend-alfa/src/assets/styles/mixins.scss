@@ -5,6 +5,29 @@
   background-clip: content-box;
 }
 
+@mixin light-button {
+  margin: 9px;
+  font-size: 14px;
+  min-height: 40px;
+  min-width: 88px;
+  padding: 0 19px;
+  transition: background .2s ease, border .2s ease, color .2s ease;
+  border-radius: 8px;
+  border: none;
+  color: #FFFFFF;
+}
+
+@mixin dark-button {
+  font-size: 14px;
+  min-height: 40px;
+  min-width: 88px;
+  padding: 0 19px;
+  transition: background .2s ease, border .2s ease, color .2s ease;
+  border-radius: 8px;
+  border: none;
+  color: #FFFFFF;
+}
+
 @mixin laptop-l {
   @media (max-width: $laptop-l-width) { @content; }
 }

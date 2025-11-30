@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns: 1fr 550px;
   min-height: 468px;
-  padding: 8px;
+  padding: 32px;
 
   &__title {
     line-height: 26px;
@@ -21,9 +21,105 @@
 
 
   &__calculate {
+    padding: 32px;
     background: #fff;
     border-radius: 24px;
     height: inherit;
     position: relative;
+    overflow: scroll;
+  }
+
+  &__download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
+
+.submit-button {
+  background-color: #ef3124;
+  @include mix.light-button;
+}
+
+.reset-button {
+  background: #121212;
+  @include mix.dark-button;
+}
+
+.file-input {
+    display: inline-block;
+    width: 200px;
+    height: 120px;
+    border: 2px dashed #D1D5DB;
+    border-radius: 8px;
+    background: #FFFFFF;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+
+    &:hover {
+      border-color: #0050C8;
+    }
+
+
+}
+
+[type="file"] {
+  color: #878787;
+}
+[type="file"]::-webkit-file-upload-button {
+  width: 200px;
+  height: 120px;
+  border: 2px dashed #D1D5DB;
+  border-radius: 8px;
+  background: #FFFFFF;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.response-block {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  height: 500px;
+  overflow-y: scroll;
+
+  h3 {
+    margin: 0 0 10px 0;
+    color: #0050C8;
+    font-size: 16px;
+  }
+}
+
+.response-text {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.response-detail {
+  p {
+    margin: 5px 0;
+  }
+}
+
+.response-json {
+  background: white;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 12px;
+  overflow-x: auto;
+  margin: 0;
+}
+
+
+
+
+
+
