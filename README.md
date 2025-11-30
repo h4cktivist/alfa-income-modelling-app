@@ -37,3 +37,4 @@
    docker-compose exec backend alembic upgrade head
    ```
 4. API будет доступно по адресу: [http://localhost:8000/docs](http://localhost:8000/docs)
+5. Фронтенд будет доступен по адресу: [http://localhost:5173](http://localhost:5173)
