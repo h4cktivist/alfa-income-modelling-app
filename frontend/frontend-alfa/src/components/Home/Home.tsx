@@ -1,8 +1,8 @@
 import './Home.scss'
-import {useNavigate} from "react-router";
+import { useNavigate } from "react-router";
 import AppRoutes from "../../components/pages/routes.tsx";
 import { useDispatch, useSelector } from 'react-redux';
-import type {AppDispatch, RootState} from '../../redux/store.tsx';
+import type { AppDispatch, RootState } from '../../redux/store.tsx';
 import { setPageId } from '../../redux/slices/PageSlice.tsx';
 
 function Home() {
@@ -10,7 +10,7 @@ function Home() {
     const dispatch = useDispatch<AppDispatch>();
     const activeButtonId = useSelector((state: RootState) => state.page.pageId);
 
-    const handleNavClick = (path: string,pageId: string) => {
+    const handleNavClick = (path: string, pageId: string) => {
         dispatch(setPageId(pageId));
         nav(path);
     };
@@ -20,7 +20,7 @@ function Home() {
                 <div className='home-wrapper_content'>
                     <div className='title'>
                         <div>
-                            <h2 className='title_text'>Расчет модели дохода</h2>
+                            <h2 className='title_text'>Прогнозирование дохода</h2>
                         </div>
                         <div className='title-links'>
                             <div
@@ -32,7 +32,7 @@ function Home() {
                         </div>
                     </div>
                     <div className='model'>
-                            <AppRoutes/>
+                        <AppRoutes />
                     </div>
                 </div>
             </div>

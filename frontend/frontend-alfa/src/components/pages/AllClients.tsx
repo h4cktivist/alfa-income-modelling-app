@@ -1,7 +1,7 @@
 import './AllClients.scss'
-import {useEffect, useState} from "react";
-import {getAllClients} from "../../../api/requests.ts";
-import {PREDICT_id_URL} from "../../../api/requests.ts";
+import { useEffect, useState } from "react";
+import { getAllClients } from "../../../api/requests.ts";
+import { PREDICT_id_URL } from "../../../api/requests.ts";
 import axios from "axios";
 
 function AllClients() {
@@ -59,12 +59,10 @@ function AllClients() {
                 </div>
             )}
             {responseData && (
-                <div className='clients__data' >
-                    <h3>Ответ от сервера:</h3>
-                    <p><strong>Client ID:</strong> {responseData.client_id}</p>
-                    <p><strong>PublicList:</strong> {responseData.publicList_income}</p>
-
-                    <p><strong>Significant Features:</strong></p>
+                <div className='clients__data'>
+                    <p><strong>ID клиента:</strong> {responseData.client_id}</p>
+                    <p><strong>Прогнозируемый доход:</strong> {responseData.predicted_income} руб.</p>
+                    <p><strong>Значимые признаки:</strong></p>
                     <div>
                         {responseData.significant_features.map((feature, index) => (
                             <li key={index}>{feature}</li>
