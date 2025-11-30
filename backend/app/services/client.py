@@ -5,6 +5,7 @@ import io
 
 from app.repositories.client import ClientRepository
 from app.schemas.client import ClientCreate, PredictionResponse, Client as ClientSchema
+from app.services.prediction_service import prediction_service
 
 
 class ClientService:
@@ -43,13 +44,16 @@ class ClientService:
         if not client:
             raise HTTPException(status_code=404, detail="Client not found")
         
-        predicted_income = 50000.0
-        significant_features = ["age", "incomeValue"]
+        # Convert to dict
+        client_dict = client.__dict__
+        
+        # Predict
+        result = prediction_service.predict([client_dict])[0]
         
         return PredictionResponse(
             client_id=client_id,
-            predicted_income=predicted_income,
-            significant_features=significant_features
+            predicted_income=result['predicted_income'],
+            significant_features=result['significant_features']
         )
 
     async def process_csv_upload(self, file: UploadFile) -> dict:
@@ -86,12 +90,10 @@ class ClientService:
             
         created_clients = await self.repository.create_batch(clients_data)
         
-        predictions = []
-        for client in created_clients:
-            predictions.append({
-                "client_id": client.id,
-                "predicted_income": 50000.0,
-                "significant_features": ["age", "incomeValue"]
-            })
+        # Convert SQLAlchemy models to dicts for prediction
+        clients_dicts = [c.__dict__ for c in created_clients]
+        
+        # Get predictions from service
+        predictions = prediction_service.predict(clients_dicts)
         
         return {"message": "Data processed successfully", "predictions": predictions}
